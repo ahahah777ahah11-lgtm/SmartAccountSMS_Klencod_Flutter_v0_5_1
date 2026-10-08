@@ -1,0 +1,20 @@
+# رسائل المحاسب الذكي — مشروع Flutter لـ Klencod IDE
+
+هذه حزمة Flutter فعلية، وليست ملف Kodular AIA. استُخدم فيها `pubspec.yaml` قياسي لتفادي فشل خطوة `Get dependencies` بسبب غياب ملف Flutter أو تعريف الحزم.
+
+## طريقة الاستخدام
+1. فك ضغط `SmartAccountSMS_Klencod_Flutter.zip` في مستودع GitHub جديد أو ارفع محتويات المجلد إلى مستودعك.
+2. في Klencod IDE اختر مستودع المشروع/مسار الجذر الذي يحتوي `pubspec.yaml`.
+3. شغّل `flutter pub get` ثم Build APK.
+4. إذا كان Klencod يبني من GitHub Actions، تأكد أن مسار المشروع هو جذر المستودع وليس مجلدًا فرعيًا آخر.
+
+## الحزم
+- Flutter SDK
+- `webview_flutter`
+- `url_launcher`
+
+## ملاحظات مهمة
+- الواجهة الحالية هي ملف HTML المرفق من الإصدار 0.5 داخل WebView.
+- روابط SMS وWhatsApp الخارجية تُمرر إلى التطبيقات المثبتة على الهاتف؛ لا يعني ذلك إرسالًا صامتًا تلقائيًا.
+- دعم اختيار ملف `.db` من داخل WebView قد يختلف حسب تنفيذ Android WebView في بيئة البناء. إذا لم يفتح منتقي الملفات، يلزم إضافة منتقي ملفات أصلي في Flutter ثم تمرير الملف إلى الواجهة.
+- لم يتم إنتاج APK داخل هذه البيئة؛ يجب تشغيل البناء في Klencod IDE أو Flutter SDK.
